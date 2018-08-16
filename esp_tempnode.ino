@@ -17,6 +17,8 @@ const char ssid[] = "revspace-pub-2.4ghz";  //  your network SSID (name)
 const char pass[] = "";       // your network password
 const char* mqtt_server = "mosquitto.space.revspace.nl";
 
+void onMqttMessage(char* topic, byte* payload, unsigned int length);
+
 WiFiClient espClient;
 PubSubClient client(mqtt_server, 1883, onMqttMessage, espClient);
 
